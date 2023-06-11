@@ -2,27 +2,27 @@
     <div class="sidebar-inner slimscroll">
         <div id="sidebar-menu" class="sidebar-menu">
             <ul>
-                <li class=""> <a href="{{ route('home') }}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
+            <li class="{{ set_active(['home']) }}"> <a href="{{ route('home') }}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
                 <li class="list-divider"></li>
                 <li class="submenu"> <a href="#"><i class="fas fa-suitcase"></i> <span> Booking </span> <span class="menu-arrow"></span></a>
                     <ul class="submenu_class" style="display: none;">
-                        <li><a href="{{ route('form/allbooking') }}"> All Booking </a></li>
-                        <li><a href="{{ url('form/booking/edit') }}"> Edit Booking </a></li>
-                        <li><a href="{{ route('form/booking/add') }}"> Add Booking </a></li>
+                        <li><a class="{{ set_active(['form/allbooking']) }}" href="{{ route('form/allbooking') }}"> All Booking </a></li>
+                        <li><a class="{{ set_active(['form/booking/edit']) }}" href="{{ url('form/booking/edit') }}"> Edit Booking </a></li>
+                        <li><a class="{{ set_active(['form/booking/add']) }}" href="{{ route('form/booking/add') }}"> Add Booking </a></li>
                     </ul>
                 </li>
                 <li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Customers </span> <span class="menu-arrow"></span></a>
                     <ul class="submenu_class" style="display: none;">
-                        <li><a class="active" href="{{ route('form/allcustomers/page') }}"> All customers </a></li>
-                        <li><a href="{{ url('form/customer/edit/') }}"> Edit Customer </a></li>
-                        <li><a href="{{ route('form/addcustomer/page') }}"> Add Customer </a></li>
+                        <li><a class="{{ set_active(['form/allcustomers/page']) }}" href="{{ route('form/allcustomers/page') }}"> All customers </a></li>
+                        <li><a class="{{ set_active(['form/customer/edit/']) }}" href="{{ url('form/customer/edit/') }}"> Edit Customer </a></li>
+                        <li><a class="{{ set_active(['form/addcustomer/page']) }}" href="{{ route('form/addcustomer/page') }}"> Add Customer </a></li>
                     </ul>
                 </li>
                 <li class="submenu"> <a href="#"><i class="fas fa-key"></i> <span> Rooms </span> <span class="menu-arrow"></span></a>
                     <ul class="submenu_class" style="display: none;">
-                        <li><a href="{{ route('form/allrooms/page') }}">All Rooms </a></li>
-                        <li><a href="{{ url('form/room/edit') }}"> Edit Rooms </a></li>
-                        <li><a href="{{ route('form/addroom/page') }}"> Add Rooms </a></li>
+                        <li><a class="{{ set_active(['form/allrooms/page']) }}" href="{{ route('form/allrooms/page') }}">All Rooms </a></li>
+                        <li><a class="{{ set_active(['form/room/edit']) }}" href="{{ url('form/room/edit') }}"> Edit Rooms </a></li>
+                        <li><a class="{{ set_active(['form/addroom/page']) }}" href="{{ route('form/addroom/page') }}"> Add Rooms </a></li>
                     </ul>
                 </li>
                 <li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Staff </span> <span class="menu-arrow"></span></a>
@@ -32,7 +32,7 @@
                         <li><a href="add-staff.html"> Add Staff </a></li>
                     </ul>
                 </li>
-                
+               
                 <li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Employees </span> <span class="menu-arrow"></span></a>
                     <ul class="submenu_class" style="display: none;">
                         <li><a href="employees.html">Employees List </a></li>
