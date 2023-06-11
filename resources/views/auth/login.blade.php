@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="loginbox">
                     <div class="login-left">
-                        <img class="img-fluid" src="{{ URL::to('assets/img/logo.png') }}" alt="Logo">
+                        <img class="img-fluid" src="{{ URL::to('assets/img/logo.png') }}" alt="Logo" style=" border-radius: 5px;">
                     </div>
                     <div class="login-right">
                         <div class="login-right-wrap">

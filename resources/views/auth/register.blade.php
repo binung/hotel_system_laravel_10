@@ -4,7 +4,7 @@
         <div class="login-wrapper">
             <div class="container">
                 <div class="loginbox">
-                    <div class="login-left"> <img class="img-fluid" src="assets/img/logo.png" alt="Logo"> </div>
+                    <div class="login-left"> <img class="img-fluid" src="assets/img/logo.png" alt="Logo" style=" border-radius: 5px;"> </div>
                     <div class="login-right">
                         <div class="login-right-wrap">
                             <h1 class="mb-3">Register</h1>
