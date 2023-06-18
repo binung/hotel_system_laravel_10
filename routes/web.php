@@ -2,10 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\RoomsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,48 +47,63 @@ Route::group(['middleware'=>'auth'],function()
 
 Auth::routes();
 
-// -----------------------------home----------------------------------------//
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('home');
-Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->middleware('auth')->name('profile');
+// ----------------------------- main dashboard ------------------------------//
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/home', 'index')->name('home');
+    Route::get('/profile', 'emDashboard')->name('profile');
+});
 
 // -----------------------------login----------------------------------------//
-Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
-Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'authenticate']);
-Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+Route::controller(LoginController::class)->group(function () {
+    Route::get('/login', 'login')->name('login');
+    Route::post('/login', 'authenticate');
+    Route::post('/logout', 'logout')->name('logout');
+});
 
 // ------------------------------ register ---------------------------------//
-Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register');
-Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'storeUser'])->name('register');
+Route::controller(RegisterController::class)->group(function () {
+    Route::get('/register', 'register')->name('register');
+    Route::post('/register', 'storeUser')->name('register');
+});
 
 // ----------------------------- forget password ----------------------------//
-Route::get('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'getEmail'])->name('forget-password');
-Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
+Route::controller(ForgotPasswordController::class)->group(function () {
+    Route::get('forget-password', 'getEmail')->name('forget-password');
+    Route::post('forget-password', 'postEmail')->name('forget-password');
+});
 
 // ----------------------------- reset password -----------------------------//
-Route::get('reset-password/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'getPassword']);
-Route::post('reset-password', [App\Http\Controllers\Auth\ResetPasswordController::class, 'updatePassword']);
+Route::controller(ResetPasswordController::class)->group(function () {
+    Route::get('reset-password/{token}', 'getPassword');
+    Route::post('reset-password', 'updatePassword');
+});
 
 // ----------------------------- booking -----------------------------//
-Route::get('form/allbooking', [App\Http\Controllers\BookingController::class, 'allbooking'])->middleware('auth')->name('form/allbooking');
-Route::get('form/booking/edit/{bkg_id}', [App\Http\Controllers\BookingController::class, 'bookingEdit']);
-Route::get('form/booking/add', [App\Http\Controllers\BookingController::class, 'bookingAdd'])->middleware('auth')->name('form/booking/add');
-
-Route::post('form/booking/save', [App\Http\Controllers\BookingController::class, 'saveRecord'])->middleware('auth')->name('form/booking/save');
-Route::post('form/booking/update', [App\Http\Controllers\BookingController::class, 'updateRecord'])->middleware('auth')->name('form/booking/update');
-Route::post('form/booking/delete', [App\Http\Controllers\BookingController::class, 'deleteRecord'])->middleware('auth')->name('form/booking/delete');
+Route::controller(BookingController::class)->group(function () {
+    Route::get('form/allbooking', 'allbooking')->name('form/allbooking')->middleware('auth');
+    Route::get('form/booking/edit/{bkg_id}', 'bookingEdit')->middleware('auth');
+    Route::get('form/booking/add', 'bookingAdd')->middleware('auth')->name('form/booking/add');
+    Route::post('form/booking/save', 'saveRecord')->middleware('auth')->name('form/booking/save');
+    Route::post('form/booking/update', 'updateRecord')->middleware('auth')->name('form/booking/update');
+    Route::post('form/booking/delete', 'deleteRecord')->middleware('auth')->name('form/booking/delete');
+});
 
 // ----------------------------- customers -----------------------------//
-Route::get('form/allcustomers/page', [App\Http\Controllers\CustomerController::class, 'allCustomers'])->middleware('auth')->name('form/allcustomers/page');
-Route::get('form/addcustomer/page', [App\Http\Controllers\CustomerController::class, 'addCustomer'])->middleware('auth')->name('form/addcustomer/page');
-Route::post('form/addcustomer/save', [App\Http\Controllers\CustomerController::class, 'saveCustomer'])->middleware('auth')->name('form/addcustomer/save');
-Route::get('form/customer/edit/{bkg_customer_id}', [App\Http\Controllers\CustomerController::class, 'updateCustomer']);
-Route::post('form/customer/update', [App\Http\Controllers\CustomerController::class, 'updateRecord'])->middleware('auth')->name('form/customer/update');
-Route::post('form/customer/delete', [App\Http\Controllers\CustomerController::class, 'deleteRecord'])->middleware('auth')->name('form/customer/delete');
+Route::controller(CustomerController::class)->group(function () {
+    Route::get('form/allcustomers/page', 'allCustomers')->middleware('auth')->name('form/allcustomers/page');
+    Route::get('form/addcustomer/page', 'addCustomer')->middleware('auth')->name('form/addcustomer/page');
+    Route::post('form/addcustomer/save', 'saveCustomer')->middleware('auth')->name('form/addcustomer/save');
+    Route::get('form/customer/edit/{bkg_customer_id}', 'updateCustomer')->middleware('auth');
+    Route::post('form/customer/update', 'updateRecord')->middleware('auth')->name('form/customer/update');
+    Route::post('form/customer/delete', 'deleteRecord')->middleware('auth')->name('form/customer/delete');
+});
 
 // ----------------------------- rooms -----------------------------//
-Route::get('form/allrooms/page', [App\Http\Controllers\RoomsController::class, 'allrooms'])->middleware('auth')->name('form/allrooms/page');
-Route::get('form/addroom/page', [App\Http\Controllers\RoomsController::class, 'addRoom'])->middleware('auth')->name('form/addroom/page');
-Route::get('form/room/edit/{bkg_room_id}', [App\Http\Controllers\RoomsController::class, 'editRoom']);
-Route::post('form/room/save', [App\Http\Controllers\RoomsController::class, 'saveRecordRoom'])->middleware('auth')->name('form/room/save');
-Route::post('form/room/delete', [App\Http\Controllers\RoomsController::class, 'deleteRecord'])->middleware('auth')->name('form/room/delete');
-Route::post('form/room/update', [App\Http\Controllers\RoomsController::class, 'updateRecord'])->middleware('auth')->name('form/room/update');
+Route::controller(RoomsController::class)->group(function () {
+    Route::get('form/allrooms/page', 'allrooms')->middleware('auth')->name('form/allrooms/page');
+    Route::get('form/addroom/page', 'addRoom')->middleware('auth')->name('form/addroom/page');
+    Route::get('form/room/edit/{bkg_room_id}', 'editRoom')->middleware('auth');
+    Route::post('form/room/save', 'saveRecordRoom')->middleware('auth')->name('form/room/save');
+    Route::post('form/room/delete', 'deleteRecord')->middleware('auth')->name('form/room/delete');
+    Route::post('form/room/update', 'updateRecord')->middleware('auth')->name('form/room/update');
+});
