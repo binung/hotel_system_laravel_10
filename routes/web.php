@@ -50,7 +50,7 @@ Auth::routes();
 // ----------------------------- main dashboard ------------------------------//
 Route::controller(HomeController::class)->group(function () {
     Route::get('/home', 'index')->name('home');
-    Route::get('/profile', 'emDashboard')->name('profile');
+    Route::get('/profile', 'profile')->name('profile');
 });
 
 // -----------------------------login----------------------------------------//
