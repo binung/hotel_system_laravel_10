@@ -1,7 +1,4 @@
 @extends('layouts.master')
-@section('menu')
-@extends('sidebar.menusidebar')
-@endsection
 @section('content')
     <style>
         .avatar {

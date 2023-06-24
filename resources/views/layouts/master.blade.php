@@ -9,12 +9,12 @@
 	<link rel="stylesheet" href="{{ URL::to('assets/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ URL::to('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
 	<link rel="stylesheet" href="{{ URL::to('assets/plugins/fontawesome/css/all.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::to('assets/plugins/datatables/datatables.min.css') }}">
 	<link rel="stylesheet" href="{{ URL::to('assets/css/feathericon.min.css') }}">
 	<link rel="stylehseet" href="https://cdn.oesmith.co.uk/morris-0.5.1.css">
 	<link rel="stylesheet" href="{{ URL::to('assets/plugins/morris/morris.css') }}">
 	<link rel="stylesheet" href="{{ URL::to('assets/css/style.css') }}"> </head>
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('assets/css/bootstrap-datetimepicker.min.css') }}">
-
 
 	{{-- message toastr --}}
 	<link rel="stylesheet" href="{{ URL::to('assets/css/toastr.min.css') }}">
@@ -25,8 +25,8 @@
 	<div class="main-wrapper">
 		<div class="header">
 			<div class="header-left">
-				<a href="index.html" class="logo"> <img src="{{ URL::to('assets/img/hotel_logo.png') }}" width="50" height="70" alt="logo"> <span class="logoclass">HOTEL</span> </a>
-				<a href="index.html" class="logo logo-small"> <img src="{{ URL::to('assets/img/hotel_logo.png') }}" alt="Logo" width="30" height="30"> </a>
+				<a href="{{ route('home') }}" class="logo"> <img src="{{ URL::to('assets/img/hotel_logo.png') }}" width="50" height="70" alt="logo"> <span class="logoclass">HOTEL</span> </a>
+				<a href="{{ route('home') }}" class="logo logo-small"> <img src="{{ URL::to('assets/img/hotel_logo.png') }}" alt="Logo" width="30" height="30"> </a>
 			</div>
 			<a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left"></i> </a>
 			<a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
@@ -117,7 +117,8 @@
 				</form>
 			</div>
 		</div>
-		@yield('menu')
+		{{-- menu --}}
+		@include('sidebar.menusidebar')
         @yield('content')
 	</div>
 	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
@@ -128,11 +129,12 @@
 	<script src="{{ URL::to('assets/plugins/raphael/raphael.min.js') }}"></script>
 	<script src="{{ URL::to('assets/js/moment.min.js') }}"></script>
 	<script src="{{ URL::to('assets/js/bootstrap-datetimepicker.min.js') }}"></script>
+	<script src="{{ URL::to('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+	<script src="{{ URL::to('assets/plugins/datatables/datatables.min.js') }}"></script>
 	<script src="{{ URL::to('assets/js/script.js') }}"></script>
 	<script src="{{ URL::to('assets/js/moment.min.js') }}"></script>
 	<script src="{{ URL::to('assets/plugins/morris/morris.min.js') }}"></script>
 	<script src="{{ URL::to('assets/js/chart.morris.js') }}"></script>
-
 
 	@yield('script')
 	

@@ -1,7 +1,4 @@
 @extends('layouts.master')
-@section('menu')
-@extends('sidebar.menusidebar')
-@endsection
 @section('content')
     {{-- message --}}
     {!! Toastr::message() !!}
@@ -26,6 +23,8 @@
                                     <thead>
                                         <tr>
                                             <th>Booking ID</th>
+                                            <th hidden>Name</th>
+                                            <th hidden>Name</th>
                                             <th>Name</th>
                                             <th>Room Type</th>
                                             <th>Total Numbers</th>
