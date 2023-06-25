@@ -1,5 +1,26 @@
 @extends('layouts.master')
 @section('content')
+
+    <?php
+
+        $hour   = date ("G");
+        $minute = date ("i");
+        $second = date ("s");
+        $msg = " Today is " . date ("l, M. d, Y.");
+
+        if ($hour == 00 && $hour <= 9 && $minute <= 59 && $second <= 59) {
+            $greet = "Good Morning,";
+        } else if ($hour >= 10 && $hour <= 11 && $minute <= 59 && $second <= 59) {
+            $greet = "Good Day,";
+        } else if ($hour >= 12 && $hour <= 15 && $minute <= 59 && $second <= 59) {
+            $greet = "Good Afternoon,";
+        } else if ($hour >= 16 && $hour <= 23 && $minute <= 59 && $second <= 59) {
+            $greet = "Good Evening,";
+        } else {
+            $greet = "Welcome,";
+        }
+    ?>
+
     {{-- message --}}
     {!! Toastr::message() !!}
     <div class="page-wrapper">
@@ -7,7 +28,8 @@
             <div class="page-header">
                 <div class="row">
                     <div class="col-sm-12 mt-5">
-                        <h3 class="page-title mt-3">Good Morning {{ Auth::user()->name }}!</h3>
+                        <h6>{{$msg}}</h6>
+                        <h3 class="page-title mt-3">{{ $greet }} {{ Auth::user()->name }}!</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ul>
