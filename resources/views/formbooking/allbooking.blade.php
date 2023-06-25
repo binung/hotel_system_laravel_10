@@ -46,10 +46,10 @@
                                             <td>{{ $bookings->bkg_id }}</td>
                                             <td>
                                                 <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar avatar-sm mr-2">
+                                                <a href="#" class="avatar avatar-sm mr-2">
                                                     <img class="avatar-img rounded-circle" src="{{ URL::to('/assets/upload/'.$bookings->fileupload) }}" alt="{{ $bookings->fileupload }}">
                                                 </a>
-                                                <a href="profile.html">{{ $bookings->name }}<span>{{ $bookings->bkg_id }}</span></a>
+                                                <a href="#">{{ $bookings->name }}<span>{{ $bookings->bkg_id }}</span></a>
                                                 </h2>
                                             </td>
                                             <td>{{ $bookings->room_type }}</td>
