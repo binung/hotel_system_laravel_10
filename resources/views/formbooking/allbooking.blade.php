@@ -23,8 +23,6 @@
                                     <thead>
                                         <tr>
                                             <th>Booking ID</th>
-                                            <th hidden>Name</th>
-                                            <th hidden>Name</th>
                                             <th>Name</th>
                                             <th>Room Type</th>
                                             <th>Total Numbers</th>
@@ -41,8 +39,6 @@
                                     <tbody>
                                         @foreach ($allBookings as $bookings )
                                         <tr>
-                                            <td hidden class="id">{{ $bookings->id }}</td>
-                                            <td hidden class="fileupload">{{ $bookings->fileupload }}</td>
                                             <td>{{ $bookings->bkg_id }}</td>
                                             <td>
                                                 <h2 class="table-avatar">
@@ -72,7 +68,7 @@
                                                         <a class="dropdown-item" href="{{ url('form/booking/edit/'.$bookings->bkg_id) }}">
                                                             <i class="fas fa-pencil-alt m-r-5"></i> Edit
                                                         </a>
-                                                        <a class="dropdown-item bookingDelete" href="#" data-toggle="modal" data-target="#delete_asset">
+                                                        <a class="dropdown-item bookingDelete" data-toggle="modal" data-target="#delete_asset" data-id="{{ $bookings->id }}" data-fileupload="{{ $bookings->fileupload }}">
                                                             <i class="fas fa-trash-alt m-r-5"></i> Delete
                                                         </a> 
                                                     </div>
@@ -88,6 +84,7 @@
                 </div>
             </div>
         </div>
+
         {{-- Model delete --}}
         <div id="delete_asset" class="modal fade delete-modal" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -108,15 +105,15 @@
             </div>
         </div>
         {{-- End Model delete --}}
+        
     </div>
     @section('script')
     {{-- delete model --}}
     <script>
         $(document).on('click','.bookingDelete',function()
         {
-            var _this = $(this).parents('tr');
-            $('#e_id').val(_this.find('.id').text());
-            $('#e_fileupload').val(_this.find('.fileupload').text());
+            $('#e_id').val($(this).data('id'));
+            $('#e_fileupload').val($(this).data('fileupload'));
         });
     </script>
     @endsection

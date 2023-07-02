@@ -19,10 +19,10 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <select class="form-control @error('name') is-invalid @enderror" id="sel1" name="name" value="{{ old('name') }}">
+                                    <select class="form-control @error('name') is-invalid @enderror" id="sel1" name="name">
                                         <option selected disabled> --Select Name-- </option>
                                         @foreach ($user as $users )
-                                        <option value="{{ $users->name }}">{{ $users->name }}</option>
+                                        <option {{ old('name') == $users->name ? "selected" : "" }} value="{{ $users->name }}">{{ $users->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -33,7 +33,7 @@
                                     <select class="form-control @error('room_type') is-invalid @enderror" id="sel2" name="room_type">
                                         <option selected disabled> --Select Room Type-- </option>
                                         @foreach ($data as $items )
-                                        <option value="{{ $items->room_name }}">{{ $items->room_name }}</option>
+                                        <option {{ old('room_type') == $items->room_name ? "selected" : "" }} value="{{ $items->room_name }}">{{ $items->room_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -100,7 +100,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Message</label>
-                                    <textarea class="form-control @error('message') is-invalid @enderror" rows="1.5" id="message" name="message" value="{{ old('message') }}"></textarea>
+                                    <textarea class="form-control @error('message') is-invalid @enderror" rows="1.5" id="message" name="message">{{ old('message') }}</textarea>
                                 </div>
                             </div>
                         </div>
