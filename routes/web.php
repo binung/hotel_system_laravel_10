@@ -10,6 +10,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RoomsController;
+use App\Http\Controllers\UserManagementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -88,7 +89,7 @@ Route::controller(BookingController::class)->group(function () {
     Route::post('form/booking/delete', 'deleteRecord')->middleware('auth')->name('form/booking/delete');
 });
 
-// ----------------------------- customers -----------------------------//
+// ---------------------------- customers --------------------------//
 Route::controller(CustomerController::class)->group(function () {
     Route::get('form/allcustomers/page', 'allCustomers')->middleware('auth')->name('form/allcustomers/page');
     Route::get('form/addcustomer/page', 'addCustomer')->middleware('auth')->name('form/addcustomer/page');
@@ -106,4 +107,9 @@ Route::controller(RoomsController::class)->group(function () {
     Route::post('form/room/save', 'saveRecordRoom')->middleware('auth')->name('form/room/save');
     Route::post('form/room/delete', 'deleteRecord')->middleware('auth')->name('form/room/delete');
     Route::post('form/room/update', 'updateRecord')->middleware('auth')->name('form/room/update');
+});
+
+// ----------------------- user management -------------------------//
+Route::controller(UserManagementController::class)->group(function () {
+    Route::get('users/list/page', 'userList')->middleware('auth')->name('users/list/page');
 });

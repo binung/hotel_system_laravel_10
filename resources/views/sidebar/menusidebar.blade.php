@@ -63,8 +63,8 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="submenu_class" style="display: none;">
-                        <li><a href="salary.html">All User</a></li>
-                        <li><a href="salary-veiw.html">User Log Activity </a></li>
+                        <li><a class="{{ set_active(['users/list/page']) }}" href="{{ route('users/list/page') }}">All User</a></li>
+                        <li><a href="">User Log Activity </a></li>
                     </ul>
                 </li>
             </ul>
