@@ -9,7 +9,7 @@
                     <div class="col">
                         <div class="mt-5">
                             <h4 class="card-title float-left mt-2">All List Users</h4>
-                            <a href="{{ route('form/addroom/page') }}" class="btn btn-primary float-right veiwbutton">Add User</a> 
+                            <a href="" class="btn btn-primary float-right veiwbutton" id="userDelete">Add User</a> 
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                     <div class="card card-table">
                         <div class="card-body booking_card">
                             <div class="table-responsive">
-                                <table class="datatable table table-stripped table table-hover table-center mb-0">
+                                <table class="datatable table table-stripped table table-hover table-center mb-0" id="UsersList">
                                     <thead>
                                         <tr>
                                             <th>User ID</th>
@@ -27,39 +27,9 @@
                                             <th>Email</th>
                                             <th>Phone Number</th>
                                             <th>Status</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>0056</td>
-                                            <td>Soeng Souy</td>
-                                            <td>soengsouy@gmail.com</td>
-                                            <td>09678767867</td>
-                                            <td>Active</td>
-                                        </tr>
-                                        <tr>
-                                            <td>0056</td>
-                                            <td>Soeng Souy</td>
-                                            <td>soengsouy@gmail.com</td>
-                                            <td>09678767867</td>
-                                            <td>Active</td>
-                                        </tr>
-                                        <tr>
-                                            <td>0056</td>
-                                            <td>Soeng Souy</td>
-                                            <td>soengsouy@gmail.com</td>
-                                            <td>09678767867</td>
-                                            <td>Active</td>
-                                        </tr>
-                                        <tr>
-                                            <td>0056</td>
-                                            <td>Soeng Souy</td>
-                                            <td>soengsouy@gmail.com</td>
-                                            <td>09678767867</td>
-                                            <td>Active</td>
-                                        </tr>
-                                        
-                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -70,5 +40,47 @@
         
     </div>
     @section('script')
+    <script type="text/javascript">
+        $(document).ready(function() {
+           $('#UsersList').DataTable({
+                processing: true,
+                serverSide: true,
+                ordering: true,
+                searching: true,
+                ajax: {
+                    url:"{{ route('get-users-data') }}",
+                },
+                columns: [
+                    {
+                        data: 'no',
+                        name: 'no',
+                    },
+                    {
+                        data: 'name',
+                        name: 'name'
+                    },
+                  
+                    {
+                        data: 'email',
+                        name: 'email'
+                    },
+                    {
+                        data: 'position',
+                        name: 'position'
+                    },
+                    {
+                        data: 'phone_number',
+                        name: 'phone_number'
+                    },
+                   
+                    {
+                        data: 'status',
+                        name: 'status',
+                    },
+                ]
+            });
+        });
+    </script>
+
     @endsection
 @endsection
