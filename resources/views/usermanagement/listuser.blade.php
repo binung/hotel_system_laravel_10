@@ -19,14 +19,14 @@
                     <div class="card card-table">
                         <div class="card-body booking_card">
                             <div class="table-responsive">
-                                <table class="datatable table table-stripped table table-hover table-center mb-0" id="UsersList">
+                                <table class="table table-stripped table table-hover table-center mb-0" id="UsersList">
                                     <thead>
                                         <tr>
                                             <th>User ID</th>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone Number</th>
-                                            <th>Status</th>
+                                            <th>Position</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
@@ -52,25 +52,24 @@
                 },
                 columns: [
                     {
-                        data: 'no',
-                        name: 'no',
+                        data: 'id',
+                        name: 'id',
                     },
                     {
                         data: 'name',
                         name: 'name'
                     },
-                  
                     {
                         data: 'email',
                         name: 'email'
                     },
                     {
-                        data: 'position',
-                        name: 'position'
-                    },
-                    {
                         data: 'phone_number',
                         name: 'phone_number'
+                    },
+                    {
+                        data: 'position',
+                        name: 'position'
                     },
                    
                     {

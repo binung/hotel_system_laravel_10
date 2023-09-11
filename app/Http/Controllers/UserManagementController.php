@@ -57,13 +57,12 @@ class UserManagementController extends Controller
         $data_arr = [];
         foreach ($records as $key => $record) {
             $data_arr [] = [
-                "no"           => $start + ($key + 1),
+                "id"           => $record->id,
                 "name"         => $record->name,
                 "email"        => $record->email,
                 "position"     => $record->position,
                 "phone_number" => $record->phone_number,
-                "status"       => $record->status,
-                
+                "status"       => $record->status, 
             ];
         }
         $response = [
