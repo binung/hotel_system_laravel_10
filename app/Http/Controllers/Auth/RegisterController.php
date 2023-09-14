@@ -29,18 +29,18 @@ class RegisterController extends Controller
             'password'  => 'required|string|min:8|confirmed',
             'password_confirmation' => 'required',
         ]);
-
+        
         $dt       = Carbon::now();
         $todayDate = $dt->toDayDateTimeString();
         
-        User::create([
-            'name'      => $request->name,
-            'avatar'    => $request->image,
-            'email'     => $request->email,
-            'join_date' => $todayDate,
-            'role_name' => $request->role_name,
-            'password'  => Hash::make($request->password),
-        ]);
+        $user = new User();
+        $user->name      = $request->name;
+        $user->email     = $request->email;
+        $user->join_date = $request->join_date;
+        $user->role_name = $request->role_name;
+        $user->password  = Hash::make($request->password);
+        $user->save();
+       
         Toastr::success('Create new account successfully :)','Success');
         return redirect('login');
     }

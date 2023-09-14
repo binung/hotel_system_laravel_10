@@ -57,7 +57,7 @@ class UserManagementController extends Controller
         $data_arr = [];
         foreach ($records as $key => $record) {
             $data_arr [] = [
-                "id"           => $record->id,
+                "user_id"      => $record->user_id,
                 "name"         => $record->name,
                 "email"        => $record->email,
                 "position"     => $record->position,
