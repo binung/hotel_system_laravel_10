@@ -13,6 +13,12 @@ class UserManagementController extends Controller
         return view('usermanagement.listuser');
     }
 
+    /** add neew users */
+    public function userAddNew()
+    {
+        return view('usermanagement.useraddnew');
+    }
+
     /** get users data */
     public function getUsersData(Request $request)
     {

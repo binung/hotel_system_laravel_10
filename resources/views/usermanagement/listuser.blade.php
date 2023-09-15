@@ -9,7 +9,7 @@
                     <div class="col">
                         <div class="mt-5">
                             <h4 class="card-title float-left mt-2">All List Users</h4>
-                            <a href="" class="btn btn-primary float-right veiwbutton" id="userDelete">Add User</a> 
+                            <a href="{{ route('users/add/new') }}" class="btn btn-primary float-right veiwbutton" id="userDelete">Add User</a> 
                         </div>
                     </div>
                 </div>

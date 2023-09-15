@@ -112,5 +112,6 @@ Route::controller(RoomsController::class)->group(function () {
 // ----------------------- user management -------------------------//
 Route::controller(UserManagementController::class)->group(function () {
     Route::get('users/list/page', 'userList')->middleware('auth')->name('users/list/page');
+    Route::get('users/add/new', 'userAddNew')->middleware('auth')->name('users/add/new'); /** add new users */
     Route::get('get-users-data', 'getUsersData')->name('get-users-data'); /** get all data users */
 });
