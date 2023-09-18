@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <form action="{{ route('form/booking/save') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-lg-12">
@@ -19,56 +19,56 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Full Name</label>
-                                    <input type="text" class="form-control @error('total_numbers') is-invalid @enderror"name="total_numbers" value="{{ old('total_numbers') }}">
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror"name="name" value="{{ old('name') }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" class="form-control @error('date') is-invalid @enderror"name="date" value="{{ old('date') }}">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror"name="email" value="{{ old('email') }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Phone Number</label>
-                                    <input type="text" class="form-control @error('time') is-invalid @enderror" id="datetimepicker3" name="time" value="{{ old('time') }}">
+                                    <input type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Role Name</label>
-                                    <input type="text" class="form-control @error('arrival_date') is-invalid @enderror" name="arrival_date" value="{{ old('arrival_date') }}">
+                                    <input type="text" class="form-control @error('role_name') is-invalid @enderror" name="role_name" value="{{ old('role_name') }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Position</label>
-                                    <input type="text" class="form-control @error('depature_date') is-invalid @enderror" name="depature_date" value="{{ old('depature_date') }}"> 
+                                    <input type="text" class="form-control @error('position') is-invalid @enderror" name="position" value="{{ old('position') }}"> 
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Department</label>
-                                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
+                                    <input type="text" class="form-control @error('department') is-invalid @enderror" name="department" value="{{ old('department') }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Confirm Password</label>
-                                    <input type="password" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
+                                    <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Profile Image</label>
                                     <div class="custom-file mb-3">
-                                        <input type="file" class="custom-file-input @error('fileupload') is-invalid @enderror" id="customFile" name="fileupload" value="{{ old('fileupload') }}">
+                                        <input type="file" class="custom-file-input @error('profile') is-invalid @enderror" id="customFile" name="profile" value="{{ old('profile') }}">
                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                     </div>
                                 </div>

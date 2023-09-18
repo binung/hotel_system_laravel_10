@@ -23,10 +23,14 @@ class RegisterController extends Controller
     public function storeUser(Request $request)
     {
         $request->validate([
-            'name'      => 'required|string|max:255',
-            'email'     => 'required|string|email|max:255|unique:users',
-            // 'role_name' => 'required|string|max:255',
-            'password'  => 'required|string|min:8|confirmed',
+            'name'         => 'required|string|max:255',
+            'email'        => 'required|string|email|max:255|unique:users',
+            'role_name'    => 'required|string|max:255',
+            'phone_number' => 'required|string|max:255',
+            'position'     => 'required|string|max:255',
+            'department'   => 'required|string|max:255',
+            'profile'      => 'required',
+            'password'     => 'required|string|min:8|confirmed',
             'password_confirmation' => 'required',
         ]);
         
