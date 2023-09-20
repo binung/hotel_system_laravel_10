@@ -35,14 +35,23 @@ class RegisterController extends Controller
         ]);
         
         $dt       = Carbon::now();
-        $todayDate = $dt->toDayDateTimeString();
+        $join_date = $dt->toDayDateTimeString();
+
+        $profile = $request->profile;
+
+        $image = time().'.'.$profile->extension();  
+        $profile->move(public_path('assets/img'), $image);
         
         $user = new User();
-        $user->name      = $request->name;
-        $user->email     = $request->email;
-        $user->join_date = $request->join_date;
-        $user->role_name = $request->role_name;
-        $user->password  = Hash::make($request->password);
+        $user->name         = $request->name;
+        $user->email        = $request->email;
+        $user->phone_number = $request->phone_number;
+        $user->join_date    = $join_date;
+        $user->role_name    = $request->role_name;
+        $user->position     = $request->position;
+        $user->department   = $request->department;
+        $user->avatar       = $image;
+        $user->password     = Hash::make($request->password);
         $user->save();
        
         Toastr::success('Create new account successfully :)','Success');
