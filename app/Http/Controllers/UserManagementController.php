@@ -19,6 +19,12 @@ class UserManagementController extends Controller
         return view('usermanagement.useraddnew');
     }
 
+    /** edit record */
+    public function userEdit()
+    {
+        return view('usermanagement.useredit');
+    }
+
     /** get users data */
     public function getUsersData(Request $request)
     {
@@ -61,6 +67,25 @@ class UserManagementController extends Controller
             ->take($rowPerPage)
             ->get();
         $data_arr = [];
+        
+        $modify = '
+            <td class="text-right">
+                <div class="dropdown dropdown-action">
+                    <a href="" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-ellipsis-v ellipse_color"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="'.url('users/add/edit').'">
+                            <i class="fas fa-pencil-alt m-r-5"></i> Edit
+                        </a>
+                        <a class="dropdown-item bookingDelete" data-toggle="modal" data-target="#delete_asset" data-id="" data-fileupload="">
+                            <i class="fas fa-trash-alt m-r-5"></i> Delete
+                        </a> 
+                    </div>
+                </div>
+            </td>
+        ';
+
         foreach ($records as $key => $record) {
             $data_arr [] = [
                 "user_id"      => $record->user_id,
@@ -69,8 +94,12 @@ class UserManagementController extends Controller
                 "position"     => $record->position,
                 "phone_number" => $record->phone_number,
                 "status"       => $record->status, 
+                "modify"       => $modify, 
             ];
         }
+
+        
+
         $response = [
             "draw"                 => intval($draw),
             "iTotalRecords"        => $totalRecords,

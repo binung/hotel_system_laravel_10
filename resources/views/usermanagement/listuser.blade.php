@@ -28,6 +28,7 @@
                                             <th>Phone Number</th>
                                             <th>Position</th>
                                             <th>Status</th>
+                                            <th>Modify</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -75,6 +76,10 @@
                     {
                         data: 'status',
                         name: 'status',
+                    },
+                    {
+                        data: 'modify',
+                        name: 'modify',
                     },
                 ]
             });
