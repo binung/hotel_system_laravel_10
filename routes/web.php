@@ -113,6 +113,7 @@ Route::controller(RoomsController::class)->group(function () {
 Route::controller(UserManagementController::class)->group(function () {
     Route::get('users/list/page', 'userList')->middleware('auth')->name('users/list/page');
     Route::get('users/add/new', 'userAddNew')->middleware('auth')->name('users/add/new'); /** add new users */
-    Route::get('users/add/edit', 'userEdit'); /** add new users */
+    Route::get('users/add/edit/{user_id}', 'userView'); /** add new users */
+    Route::post('users/update', 'userUpdate')->name('users/update'); /** add new users */
     Route::get('get-users-data', 'getUsersData')->name('get-users-data'); /** get all data users */
 });

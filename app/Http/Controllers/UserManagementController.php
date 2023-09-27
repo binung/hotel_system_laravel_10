@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\User;
 
 class UserManagementController extends Controller
 {
@@ -20,9 +21,16 @@ class UserManagementController extends Controller
     }
 
     /** edit record */
-    public function userEdit()
+    public function userView($user_id)
     {
-        return view('usermanagement.useredit');
+        $userData = User::where('user_id',$user_id)->first();
+        return view('usermanagement.useredit',compact('userData'));
+    }
+
+    /** update record */
+    public function userUpdate()
+    {
+        return dd('OK');
     }
 
     /** get users data */
@@ -68,14 +76,15 @@ class UserManagementController extends Controller
             ->get();
         $data_arr = [];
         
-        $modify = '
+        foreach ($records as $key => $record) {
+            $modify = '
             <td class="text-right">
                 <div class="dropdown dropdown-action">
                     <a href="" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-ellipsis-v ellipse_color"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="'.url('users/add/edit').'">
+                        <a class="dropdown-item" href="'.url('users/add/edit/'.$record->user_id).'">
                             <i class="fas fa-pencil-alt m-r-5"></i> Edit
                         </a>
                         <a class="dropdown-item bookingDelete" data-toggle="modal" data-target="#delete_asset" data-id="" data-fileupload="">
@@ -85,8 +94,6 @@ class UserManagementController extends Controller
                 </div>
             </td>
         ';
-
-        foreach ($records as $key => $record) {
             $data_arr [] = [
                 "user_id"      => $record->user_id,
                 "name"         => $record->name,
