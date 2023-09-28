@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\User;
+use Brian2694\Toastr\Facades\Toastr;
 
 class UserManagementController extends Controller
 {
@@ -28,9 +29,28 @@ class UserManagementController extends Controller
     }
 
     /** update record */
-    public function userUpdate()
+    public function userUpdate(Request $request)
     {
-        return dd('OK');
+        DB::beginTransaction();
+        try {
+            $updateRecord = [
+                'name'         => $request->name,
+                'email'        => $request->email,
+                'phone_number' => $request->phone_number,
+                'position'     => $request->position,
+                'department'   => $request->department,
+            ];
+
+            User::where('user_id',$request->user_id)->update($updateRecord);
+        
+            DB::commit();
+            Toastr::success('Updated record successfully :)','Success');
+            return redirect()->back();
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Update record fail :)','Error');
+            return redirect()->back();
+        }
     }
 
     /** get users data */

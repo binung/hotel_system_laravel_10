@@ -13,6 +13,7 @@
             </div>
             <form action="{{ route('users/update') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" class="form-control "name="user_id" value="{{ $userData->user_id }}" readonly>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row formtype">
