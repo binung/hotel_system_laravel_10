@@ -53,6 +53,23 @@ class UserManagementController extends Controller
         }
     }
 
+    /** delete record */
+    public function userDelete($id)
+    {
+        try {
+
+            $deleteRecord = User::find($id);
+            $deleteRecord->delete();
+            Toastr::success('User deleted successfully :)','Success');
+            return redirect()->back();
+        
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('User delete fail :)','Error');
+            return redirect()->back();
+        }
+    }
+
     /** get users data */
     public function getUsersData(Request $request)
     {
@@ -98,22 +115,22 @@ class UserManagementController extends Controller
         
         foreach ($records as $key => $record) {
             $modify = '
-            <td class="text-right">
-                <div class="dropdown dropdown-action">
-                    <a href="" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v ellipse_color"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="'.url('users/add/edit/'.$record->user_id).'">
-                            <i class="fas fa-pencil-alt m-r-5"></i> Edit
+                <td class="text-right">
+                    <div class="dropdown dropdown-action">
+                        <a href="" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v ellipse_color"></i>
                         </a>
-                        <a class="dropdown-item bookingDelete" data-toggle="modal" data-target="#delete_asset" data-id="" data-fileupload="">
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="'.url('users/add/edit/'.$record->user_id).'">
+                                <i class="fas fa-pencil-alt m-r-5"></i> Edit
+                            </a>
+                            <a class="dropdown-item" href="'.url('users/delete/'.$record->id).'">
                             <i class="fas fa-trash-alt m-r-5"></i> Delete
-                        </a> 
+                        </a>
+                        </div>
                     </div>
-                </div>
-            </td>
-        ';
+                </td>
+            ';
             $data_arr [] = [
                 "user_id"      => $record->user_id,
                 "name"         => $record->name,
