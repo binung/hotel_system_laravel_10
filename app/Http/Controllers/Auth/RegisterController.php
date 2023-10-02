@@ -29,7 +29,6 @@ class RegisterController extends Controller
             'phone_number' => 'required|string|max:255',
             'position'     => 'required|string|max:255',
             'department'   => 'required|string|max:255',
-            'profile'      => 'required',
             'password'     => 'required|string|min:8|confirmed',
             'password_confirmation' => 'required',
         ]);
@@ -37,10 +36,13 @@ class RegisterController extends Controller
         $dt       = Carbon::now();
         $join_date = $dt->toDayDateTimeString();
 
-        $profile = $request->profile;
-
-        $image = time().'.'.$profile->extension();  
-        $profile->move(public_path('assets/img'), $image);
+        if(!empty($profile)) {
+            $image = time().'.'.$profile->extension();  
+            $profile->move(public_path('assets/img'), $image);
+        } else {
+            $image = ' ';
+        }
+        
         
         $user = new User();
         $user->name         = $request->name;

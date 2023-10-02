@@ -11,6 +11,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RoomsController;
 use App\Http\Controllers\UserManagementController;
+use App\Http\Controllers\EmployeeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -117,4 +118,9 @@ Route::controller(UserManagementController::class)->group(function () {
     Route::post('users/update', 'userUpdate')->name('users/update'); /** update record */
     Route::get('users/delete/{id}', 'userDelete')->name('users/delete'); /** delere record */
     Route::get('get-users-data', 'getUsersData')->name('get-users-data'); /** get all data users */
+});
+
+// ----------------------------- emplyee -----------------------------//
+Route::controller(EmployeeController::class)->group(function () {
+    Route::get('form/emplyee/list', 'employeesList')->middleware('auth')->name('form/emplyee/list');
 });

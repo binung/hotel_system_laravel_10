@@ -11,16 +11,31 @@
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="form-group">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  placeholder="Enter Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"  placeholder="Enter Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Enter Email" value="{{ old('email') }}" required autocomplete="off">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Enter Email" value="{{ old('email') }}" required autocomplete="off">
+                                </div>
+                                <div class="form-group" hidden>
+                                    <input type="text" class="form-control @error('role_name') is-invalid @enderror" name="role_name" value="User Normal">
+                                </div>
+                                <div class="form-group" hidden>
+                                    <input type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="010">
+                                </div>
+                                <div class="form-group" hidden>
+                                    <input type="text" class="form-control @error('position') is-invalid @enderror" name="position" value="Level One">
+                                </div>
+                                <div class="form-group" hidden>
+                                    <input type="text" class="form-control @error('department') is-invalid @enderror" name="department" value="IT">
+                                </div>
+                                <div class="form-group" hidden>
+                                    <input type="text" class="form-control @error('profile') is-invalid @enderror" name="profile">
                                 </div>
                                 <div class="form-group">
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Enter Password" required autocomplete="off">
                                 </div>
                                 <div class="form-group">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  placeholder="Confirm Password" required autocomplete="off">
+                                    <input type="password" class="form-control" name="password_confirmation"  placeholder="Confirm Password" required autocomplete="off">
                                 </div>
                                 <div class="form-group mb-0">
                                     <button class="btn btn-primary btn-block" type="submit">Register</button>
