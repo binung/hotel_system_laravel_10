@@ -9,7 +9,7 @@
                     <div class="col">
                         <div class="mt-5">
                             <h4 class="card-title float-left mt-2">Employee</h4>
-                            <a href="add-employee.html" class="btn btn-primary float-right veiwbutton">Add
+                            <a href="{{ route('form/employee/add') }}" class="btn btn-primary float-right veiwbutton">Add
                                 Employee</a>
                         </div>
                     </div>

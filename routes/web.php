@@ -123,4 +123,5 @@ Route::controller(UserManagementController::class)->group(function () {
 // ----------------------------- emplyee -----------------------------//
 Route::controller(EmployeeController::class)->group(function () {
     Route::get('form/emplyee/list', 'employeesList')->middleware('auth')->name('form/emplyee/list');
+    Route::get('form/employee/add', 'employeesAdd')->middleware('auth')->name('form/employee/add');
 });
