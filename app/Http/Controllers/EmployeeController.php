@@ -17,4 +17,10 @@ class EmployeeController extends Controller
     {
         return view('employees.employee_add');
     }
+
+    /** leaves page */
+    public function leavesPage()
+    {
+        return view('employees.leaves');
+    }
 }

@@ -29,7 +29,7 @@
                     <ul class="submenu_class" style="display: none;">
                         <li><a  class="{{ set_active(['form/emplyee/list']) }}" href="{{ route('form/emplyee/list') }}">Employees List </a></li>
                         <li><a  class="{{ set_active(['form/employee/add']) }}" href="{{ route('form/employee/add') }}">Employees Add </a></li>
-                        <li><a href="leaves.html">Leaves </a></li>
+                        <li><a  class="{{ set_active(['form/leaves/page']) }}" href="{{ route('form/leaves/page') }}">Leaves </a></li>
                         <li><a href="holidays.html">Holidays </a></li>
                         <li><a href="attendance.html">Attendance </a></li>
                     </ul>

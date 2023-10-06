@@ -120,8 +120,9 @@ Route::controller(UserManagementController::class)->group(function () {
     Route::get('get-users-data', 'getUsersData')->name('get-users-data'); /** get all data users */
 });
 
-// ----------------------------- emplyee -----------------------------//
+// ----------------------------- employee -----------------------------//
 Route::controller(EmployeeController::class)->group(function () {
     Route::get('form/emplyee/list', 'employeesList')->middleware('auth')->name('form/emplyee/list');
     Route::get('form/employee/add', 'employeesAdd')->middleware('auth')->name('form/employee/add');
+    Route::get('form/leaves/page', 'leavesPage')->middleware('auth')->name('form/leaves/page');
 });
