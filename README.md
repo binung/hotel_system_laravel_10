@@ -11,7 +11,7 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 ## Add your files
 
 - [ ] [Create](https://docs.github.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.github.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.github.com/ee/github-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+- [ ] [Add files using the command line](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository) or push an existing Git repository with the following command:
 
 ```
 cd existing_repo
