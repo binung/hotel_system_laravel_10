@@ -27,7 +27,7 @@
                                 </div>
                             </form>
                             <div class="text-center forgotpass">
-                                <a href="{{ route('forget-password') }}">Forgot Password?</a>
+                                <a href="{{ route('forget-password') }}">F    feforgot Password?</a>
                             </div>
                             <div class="login-or"><span class="or-line"></span> <span class="span-or">or</span></div>
                             <div class="social-login"><span>Login with</span><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
