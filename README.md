@@ -11,7 +11,7 @@
 # Step 1: Git Clone Laravel 10
 First, clone a new Laravel app just by running the below command in your terminal.
 ```
-https://gitlab.com/SoengSouy/hotel_system_laravel_10.git
+https://gitlab.com/binung/hotel_system_laravel_10.git
 ```
 
 # Step 2: Composer Update
