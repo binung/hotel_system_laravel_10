@@ -26,7 +26,7 @@ git push -u origin main
 
 ## Collaborate with your team
 
-- [ ] [Invite team members and collaborators](https://docs.github.com/ee/user/project/members/)
+- [ ] [Invite team members and collaborators](https://docs.github.com/en/organizations/managing-membership-in-your-organization/inviting-users-to-join-your-organization)
 - [ ] [Create a new merge request](https://docs.github.com/ee/user/project/merge_requests/creating_merge_requests.html)
 - [ ] [Automatically close issues from merge requests](https://docs.github.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
 - [ ] [Enable merge request approvals](https://docs.github.com/ee/user/project/merge_requests/approvals/)
