@@ -22,7 +22,7 @@ git push -uf origin main
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/SoengSouy/hotel_system_laravel_10/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/binung/hotel_system_laravel_10/-/settings/integrations)
 
 ## Collaborate with your team
 
