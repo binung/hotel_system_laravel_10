@@ -31,11 +31,11 @@ DB_DATABASE=your_db
 DB_USERNAME=root
 DB_PASSWORD=#your database password
 ```
-**
-```
+
+```**
 2. for send mail when fogot password
-```
-**
+**```
+
 
 ```
 MAIL_DRIVER=smtp
