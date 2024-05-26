@@ -33,7 +33,7 @@ DB_PASSWORD=#your database password
 ```
 
 ```
-2. for send mail when fogot password
+# 2. for send mail when fogot password
 ```
 
 ```
