@@ -10,14 +10,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ## Add your files
 
-- [ ] [Create](https://docs.github.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.github.com/ee/user/project/repository/web_editor.html#upload-a-file) files
+- [ ] [Create](https://docs.github.com/en/repositories/working-with-files/managing-files/creating-new-files) or [upload](https://docs.github.com/en/repositories/working-with-files/managing-files/moving-a-file-to-a-new-location) files
 - [ ] [Add files using the command line](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository) or push an existing Git repository with the following command:
 
 ```
 cd existing_repo
 git remote add origin https://github.com/binung/hotel_system_laravel_10.git
 git branch -M main
-git push -uf origin main
+git push -u origin main
 ```
 
 ## Integrate with your tools
