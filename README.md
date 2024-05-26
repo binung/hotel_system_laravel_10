@@ -1,5 +1,8 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="./public/assets/img/readme/home.jpg" width="1000" alt="Laravel Logo"></a></p>
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="./public/assets/img/readme/all_user.jpg" width="1000" alt="Laravel Logo"></a></p>
+<p align="center"><img src="./public/assets/img/readme/login.jpg" width="1000" alt="Laravel Logo"></p>
+
+<p align="center"><img src="./public/assets/img/readme/home.jpg" width="1000" alt="Laravel Logo"></p>
+
+<p align="center"><img src="./public/assets/img/readme/all_user.jpg" width="1000" alt="Laravel Logo"></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -9,6 +12,7 @@
 </p>
 
 # Git Clone my Project
+
 ```
 1.Run `git clone 'link projer github'
 2.Run composer update
@@ -18,21 +22,29 @@
 6.Run php artisan serve
 7.Go to link localhost:8000
 ```
+
 # Step 1: Git Clone Laravel 10
+
 First, clone a new Laravel app just by running the below command in your terminal.
+
 ```
 https://gitlab.com/binung/hotel_system_laravel_10.git
 ```
 
 # Step 2: Composer Update
+
 Type the command in your terminal.
+
 ```
 composer update
 ```
 
 # Step 3: Update Your Database Credentials
+
 After that update your database credentials in your .env file which is located in your project root.
+
 1. connection databases
+
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -46,7 +58,6 @@ DB_PASSWORD=#your database password
 2. for send mail when fogot password
 ```
 
-
 ```
 MAIL_DRIVER=smtp
 MAIL_HOST=smtp.gmail.com
@@ -57,6 +68,7 @@ MAIL_ENCRYPTION=tls
 ```
 
 # Step 4: Make Migration
+
 After adding the migration file now run the migrate command.
 
 ```
@@ -64,6 +76,7 @@ php artisan migrate
 ```
 
 # Step 5:Run
+
 After adding the run file now run the migrate command.
 
 ```
