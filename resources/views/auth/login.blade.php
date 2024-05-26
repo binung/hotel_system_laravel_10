@@ -11,7 +11,6 @@
                         <div class="login-right-wrap">
                             <h1>Login</h1>
                             {{-- message --}}   
-       dsfsdf
                             {!! Toastr::message() !!}
                             <p class="account-subtitle">Access to our dashboard</p>
                             <form method="POST" action="{{ route('login') }}">
