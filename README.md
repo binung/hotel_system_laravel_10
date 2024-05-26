@@ -32,9 +32,9 @@ DB_USERNAME=root
 DB_PASSWORD=#your database password
 ```
 
-```**
+```
 2. for send mail when fogot password
-**```
+```
 
 
 ```
