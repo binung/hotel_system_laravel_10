@@ -4,7 +4,7 @@
 /public/hot
 /public/storage
 /public/assets/upload
-/public/assets/img
+
 /storage/*.key
 /vendor
 .env
