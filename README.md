@@ -21,7 +21,7 @@ composer update
 ```
 
 # Step 3: Update Your Database Credentials
-After that update your database credentials in your .env file which is located in your project root.
+`#0969DA`After that update your database credentials in your .env file which is located in your project root.
 1. connection databases
 ```
 DB_CONNECTION=mysql
@@ -33,7 +33,7 @@ DB_PASSWORD=#your database password
 ```
 
 ```
-**2. for send mail when fogot password**
+2. for send mail when fogot password
 ```
 
 ```
