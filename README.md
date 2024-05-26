@@ -27,20 +27,18 @@ git push -u origin main
 ## Collaborate with your team
 
 - [ ] [Invite team members and collaborators](https://docs.github.com/en/organizations/managing-membership-in-your-organization/inviting-users-to-join-your-organization)
-- [ ] [Create a new merge request](https://docs.github.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.github.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.github.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.github.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+- [ ] [Create a new merge request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue)
+- [ ] [Automatically close issues from merge requests](https://docs.github.com/en/issues/tracking-your-work-with-issues/closing-an-issue)
+- [ ] [Enable merge request approvals](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-merging-for-pull-requests)
+- [ ] [Automatically merge when pipeline succeeds](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)
 
 ## Test and Deploy
 
 Use the built-in continuous integration in github.
 
-- [ ] [Get started with github CI/CD](https://docs.github.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.github.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.github.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.github.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.github.com/ee/ci/environments/protected_environments.html)
+- [ ] [Get started with github CI/CD](https://docs.github.com/en/get-started)
+- [ ] [Analyze your code for known vulnerabilities with Static Code Security Testing(SAST)](https://docs.github.com/en/code-security)
+
 
 ***
 
