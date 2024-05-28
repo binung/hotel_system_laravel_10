@@ -12,6 +12,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RoomsController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\EmployeeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,21 +25,20 @@ use App\Http\Controllers\EmployeeController;
 */
 
 /** set side bar active dynamic */
-function set_active($route) {
-    if(is_array($route)) {
+function set_active($route)
+{
+    if (is_array($route)) {
         return in_array(Request::path(), $route) ? 'active' : '';
     }
-    return Request::path() == $route ? 'active': '';
+    return Request::path() == $route ? 'active' : '';
 }
 
 Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::group(['middleware'=>'auth'],function()
-{
-    Route::get('home',function()
-    {
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('home', function () {
         return view('home');
     });
     // Route::get('home',function()
