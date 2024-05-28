@@ -36,6 +36,7 @@ class RegisterController extends Controller
         $dt       = Carbon::now();
         $join_date = $dt->toDayDateTimeString();
 
+        // dump($profile);
         if(!empty($profile)) {
             $image = time().'.'.$profile->extension();  
             $profile->move(public_path('assets/img'), $image);

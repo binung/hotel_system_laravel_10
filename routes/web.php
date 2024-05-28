@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\ResetPasswordController;
-use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RoomsController;
@@ -41,10 +41,10 @@ Route::group(['middleware'=>'auth'],function()
     {
         return view('home');
     });
-    Route::get('home',function()
-    {
-        return view('home');
-    });
+    // Route::get('home',function()
+    // {
+    //     return view('home');
+    // });
 });
 
 Auth::routes();
